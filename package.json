@@ -1,0 +1,24 @@
+{
+  "name": "clementine_build",
+  "version": "0.1.0",
+  "description": "Voting app using clementine.js built ground up.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schrode50/clementineFromScratch.git"
+  },
+  "author": "Stephen Schroeder | schrode50@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schrode50/clementineFromScratch/issues"
+  },
+  "homepage": "https://github.com/schrode50/clementineFromScratch#readme"
+}
