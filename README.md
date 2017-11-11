@@ -1,2 +1,2 @@
-# clementineFromScratch
-Ground up Clementine build
+# Vote Counter
+This will be a simple voting app with Github Oauth included.

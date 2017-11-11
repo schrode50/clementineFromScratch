@@ -1,7 +1,16 @@
 'use strict';
 
-var path = require('path');
+var ClickHandler = require(process.cwd() + '/app/controllers/clickHandler.server.js');
 
-module.exports = (app) => 
-app.route('/').get((req, res) => 
-res.sendFile(path.join(__dirname + '/../../public/index.html')));
+module.exports = function (app, db) {
+
+	var clickHandler = new ClickHandler(db);
+
+	app.route('/')
+		.get(function (req, res) {
+			res.sendFile(process.cwd() + '/public/index.html');
+		});
+
+	app.route('/api/clicks')
+		.get(clickHandler.getClicks);
+};
