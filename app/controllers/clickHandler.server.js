@@ -1,16 +1,16 @@
 'use strict';
 
+require(process.cwd() + '/app/model/job.js');
+
 function clickHandler(db) {
-  var clicks = db.collection('clicks');
+  let clicks = db.model('ClickCounter', 'ClickCountModel');
 
   this.getClicks = function(req, res) {
-    var clickProjection = {'_id': false};
 
-    clicks.findOne({}, clickProjection, function(err, result) {
+    clicks.find({}, function(err, result) {
       if(err) {
         throw err;
-      }
-      if(result) {
+      } if(result) {
         res.json(result);
       } else {
         clicks.insert({'clicks': 0}, function(err) {
