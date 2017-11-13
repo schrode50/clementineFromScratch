@@ -1,10 +1,10 @@
 'use strict';
 
 function clickHandler(db) {
-  let clicks = db.collection('clicks');
+  var clicks = db.collection('clicks');
 
   this.getClicks = function(req, res) {
-    let clickProjection = {'_id': false};
+    var clickProjection = {'_id': false};
 
     clicks.findOne({}, clickProjection, function(err, result) {
       if(err) {
