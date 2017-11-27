@@ -5,7 +5,7 @@ var app = express();
 var mongoose = require('mongoose');
 var routes = require(__dirname + '/app/routes/index');
 
-const dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/dev_db';
+const dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/db';
 
 const options = {
 	useMongoClient: true
@@ -15,7 +15,7 @@ const db = mongoose.connect(dbUrl, options, function(err) {
 	if (err) {
 		throw new Error('Database failed to connect!');
 	} else {
-		console.log('MongoDB successfully connected on port 27017.');
+		console.log('MongoDB successfully connected on port ' + dbUrl + ' .');
 	}
 	console.log(mongoose.connection.readyState);
 })
