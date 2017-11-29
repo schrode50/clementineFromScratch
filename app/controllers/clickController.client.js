@@ -35,4 +35,18 @@
     var clicksObject = JSON.parse(data);
     clickNbr.innerHTML = clicksObject.clicks;
   }
+
+  addButton.addEventListener('click', function() {
+    ajaxRequest('POST', apiUrl, function() {
+      ajaxRequest('GET', apiUrl, updateClickCount)
+    });
+  }, false);
+
+  deleteButton.addEventListener('click', function() {
+    ajaxRequest('DELETE', apiUrl, function() {
+      ajaxRequest('GET', apiUrl, updateClickCount)
+    });
+  }, false);
+
+  ready(ajaxRequest('GET', apiURL, udateClickCount));
 })();
